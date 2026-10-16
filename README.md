@@ -79,7 +79,7 @@ TVWALL_PORT=18088 docker compose up -d --build
 
 ### 必须配置服务端 URL
 
-客户端不会在安装后弹窗配置服务端地址，服务端 URL 会在 APK **构建时**写入 `BuildConfig.SERVER_URL`。构建时必须把它替换成手机能够访问的管理端地址，例如：
+客户端不会在安装后弹窗配置服务端地址，服务端 URL 会在 APK **构建时**写入 `BuildConfig.SERVER_URL`。构建时必须把它替换成安卓设备/安卓电视能够访问的管理端地址，例如：
 
 ```bash
 cd android-client
@@ -103,7 +103,7 @@ Debug APK 输出位置：
 android-client/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-安装到已开启 USB 调试的手机：
+安装到已开启 USB 调试的安卓设备/安卓电视：
 
 ```bash
 adb install -r android-client/app/build/outputs/apk/debug/app-debug.apk
@@ -123,7 +123,7 @@ gradle :app:assembleRelease \
 
 ## 客户端首次注册
 
-1. 先让手机安装并启动客户端，客户端会使用 Android ID 向管理端注册。
+1. 先让安卓设备/安卓电视安装并启动客户端，客户端会使用 Android ID 向管理端注册。
 2. 在管理后台通过“添加电视”填写客户端 IP，或者手动执行局域网扫描。
 3. 客户端下一次心跳成功后会绑定设备、保存服务端返回的 token，并开始接收展示网址配置。
 4. 在管理后台编辑设备，填写展示网址；客户端会自动加载该网址并按配置上传关键帧。
