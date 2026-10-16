@@ -1,0 +1,22 @@
+[Unit]
+Description=TV Wall management server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/tvwall
+ExecStart=/opt/tvwall/tvwall-server
+Environment=TVWALL_DATA=/var/lib/tvwall
+Environment=TVWALL_LISTEN_ADDR=:8088
+Restart=always
+RestartSec=3
+User=tvwall
+Group=tvwall
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/lib/tvwall
+
+[Install]
+WantedBy=multi-user.target

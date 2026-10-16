@@ -1,0 +1,9 @@
+.git
+.agents
+.aws
+.codex
+data*
+android-client
+README.md
+deploy
+server/main_test.go

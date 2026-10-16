@@ -1,0 +1,13 @@
+plugins { id 'com.android.application' }
+
+// Pass the management server URL at build time. The fallback is a documentation
+// address reserved for examples and will not connect to a real installation.
+def configuredServerUrl = (project.findProperty('tvwallServerUrl') ?: System.getenv('TVWALL_SERVER_URL') ?: 'http://192.0.2.1:8088').toString()
+def escapedServerUrl = configuredServerUrl.replace('\\', '\\\\').replace('"', '\\"')
+
+android { namespace 'com.tvwall.client'; compileSdk 34
+    buildFeatures { buildConfig true }
+    defaultConfig { applicationId 'com.tvwall.client'; minSdk 26; targetSdk 34; versionCode 1; versionName '0.1.0'; buildConfigField 'String', 'SERVER_URL', "\"${escapedServerUrl}\"" }
+}
+
+dependencies { implementation 'androidx.appcompat:appcompat:1.7.0'; implementation 'androidx.webkit:webkit:1.12.1' }

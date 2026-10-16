@@ -1,0 +1,33 @@
+# Runtime data and screenshots
+data/
+*.jpg
+*.jpeg
+*.png
+
+# Go build and test output
+tvwall-server
+*.test
+coverage.out
+
+# Android/Gradle output
+.gradle/
+local.properties
+android-client/.gradle/
+android-client/build/
+android-client/app/build/
+android-client/**/build/
+*.apk
+*.aab
+
+# Local environment and editor files
+.agents/
+.aws/
+.codex/
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
